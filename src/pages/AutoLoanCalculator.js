@@ -88,16 +88,17 @@ function AutoLoanCalculator() {
         if(hidden===false){
         return(
             <div className="Output-Container">
-                <p>Monthly Payment: {outputValues["Monthly-Payment"]}</p>
-                <p>Auto Price: {outputValues["Auto-Price"]}</p>
-                <p>Sales Tax: {outputValues["Sales-Tax"]}</p>
-                <p>Loan Amount: {outputValues["Loan-Amount"]}</p>
-                <p>Total Cost After {outputValues["Loan-Length"]} Loan Payments: {outputValues["Loan-Total-Amount"]}</p>
-                <p>Total Interest on loan: {outputValues["Loan-Interest-Total"]}</p>
+                <p>Monthly Payment: ${outputValues["Monthly-Payment"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                <p>Auto Price: ${outputValues["Auto-Price"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                <p>Sales Tax: ${outputValues["Sales-Tax"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                <p>Loan Amount: ${outputValues["Loan-Amount"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                <p>Total Cost After {outputValues["Loan-Length"]} Loan Payments: ${outputValues["Loan-Total-Amount"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                <p>Total Interest on loan: ${outputValues["Loan-Interest-Total"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                <button onClick={() => setHidden(true)}>Clear</button>
             </div>
         );
         }
-        else{return(<div>l</div>);}
+        else{return(<div></div>);}
     }
 
     return(
