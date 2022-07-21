@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../styles/AutoLoanCalculatorStyle.css';
 
 function AutoLoanCalculator() {
 
@@ -88,13 +89,20 @@ function AutoLoanCalculator() {
         if(hidden===false){
         return(
             <div className="Output-Container">
-                <p>Monthly Payment: ${outputValues["Monthly-Payment"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
-                <p>Auto Price: ${outputValues["Auto-Price"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
-                <p>Sales Tax: ${outputValues["Sales-Tax"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
-                <p>Loan Amount: ${outputValues["Loan-Amount"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
-                <p>Total Cost After {outputValues["Loan-Length"]} Loan Payments: ${outputValues["Loan-Total-Amount"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
-                <p>Total Interest on loan: ${outputValues["Loan-Interest-Total"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
-                <button onClick={() => setHidden(true)}>Clear</button>
+                <div className="Output-Monthly">
+                    <p>Monthly Payment</p> <p className="Left">${outputValues["Monthly-Payment"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                </div>    
+                    <p>Auto Price: ${outputValues["Auto-Price"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                    
+                    <p>Sales Tax: ${outputValues["Sales-Tax"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                    
+                    <p>Loan Amount: ${outputValues["Loan-Amount"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                    
+                    <p>Total Cost After {outputValues["Loan-Length"]} Loan Payments: ${outputValues["Loan-Total-Amount"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                    
+                    <p>Total Interest on loan: ${outputValues["Loan-Interest-Total"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
+                    
+                    <button onClick={() => setHidden(true)}>Clear</button>
             </div>
         );
         }
@@ -127,7 +135,7 @@ function AutoLoanCalculator() {
                 </div>      
                 <div className = "Sales-Tax">
                     <p>Sales Tax</p>
-                    <input type="number" placeholder="0" name="sales-tax" onChange={handleInputChange}/>
+                    <input type="number" step="any" placeholder="0" name="sales-tax" onChange={handleInputChange}/>
                 </div>
                 <button className = "Calculate" type='submit'>Calculate</button>
             </form>  
