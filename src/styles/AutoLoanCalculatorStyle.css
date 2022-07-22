@@ -20,10 +20,16 @@ button {
     display: grid;
     
     border-radius: 10px;
-    width: 1100px;
+    max-width: 1100px;
+    width: 900px;
     height: 390px;
     background-color: #D9D9D9;
 
+    padding-left: 5%;
+    padding-right: 5%;
+
+    grid-template-rows: 1fr,1fr,1fr,1fr;
+    grid-template-columns: 1fr,1fr,1fr;
 }
 
 h1 {
@@ -31,60 +37,89 @@ h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
+
+    grid-row: 1;
+    grid-column: 1/4;
+
+    text-align: center;
 }
 
 .Auto-Price {
     display: flex;
+    justify-content: end;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+
+    grid-row: 2;
+    grid-column: 1;
 }
 
 .Loan-Term {
     display: flex;
+    justify-content: end;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+
+    grid-row: 2;
+    grid-column: 2;
 }
 
 .Interest-Rate {
     display: flex;
+    justify-content: end;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+
+    grid-row: 2;
+    grid-column: 3;
 }
 
 .Down-Payment{
     display: flex;
+    justify-content: end;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+
+    grid-row: 3;
+    grid-column: 1;
 }
 
 .Trade-In-Value {
     display: flex;
+    justify-content: flex-end;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+
+    grid-row: 3;
+    grid-column: 2;
 }
 
 .Sales-Tax {
     display: flex;
+    justify-content: flex-end;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+
+    grid-row: 3;
+    grid-column: 3;
 }
 
 input {
@@ -94,7 +129,16 @@ input {
     background: #FFFFFF;
     border-radius: 3px;
 }
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+}
 .Calculate {
     width: 150px;
     height: 40px;
@@ -105,6 +149,14 @@ input {
     font-style: normal;
     font-weight: 700;
     color: #FFFFFF;
+    
+    grid-row: 4;
+    grid-column: 3;
+}
+
+.Calculate:hover{
+    cursor: pointer;
+    background: #3a9700;
 }
 
 .Calculate:active{
@@ -118,15 +170,12 @@ input {
     border-radius: 10px;
 
     margin-top: 40px;
+    margin-bottom: 40px;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-
-    /*display: flex;
-    flex-direction: column;
-    */
 }
 
 .Output-Monthly {
@@ -141,9 +190,48 @@ input {
     font-weight: 700;
     font-size: 32px;
     color: #FFFFFF;
+    margin: 0px; 
 
-    margin: 0px;
+    display: grid;
 }
-.left {
 
+.Monthly {
+    margin-left: 10px;
+    margin-top: 20px
+}
+
+.Output-Other {
+    width: 820px;
+    height: 55px;
+
+    display: grid;
+    grid-template-columns: 1fr,1fr;
+}
+
+.Left {
+    text-align: left;
+    margin-left: 10px;
+
+    grid-column: 1;
+} 
+    
+.Right {
+    text-align: right;
+    margin-right: 10px;
+
+    grid-column: 2;
+}
+
+.Clear {
+    margin: 40px;
+    color: #d1d1d1;
+}
+
+.Clear:hover {
+    color: grey;
+    cursor: pointer; 
+}
+
+Clear:active {
+    color: black;
 }
