@@ -121,28 +121,34 @@ function AutoLoanCalculator() {
             <form className="Input-Container" onSubmit={calcOutput}>  
                 <h1>Auto Loan Calculator</h1>
                 <div className = "Auto-Price">
-                    <p>Auto Price</p>
-                    <input type="number" placeholder="0" name="auto-price" onChange={handleInputChange}/>
+                    <p className = "input-header">Auto Price</p>
+                    <p className="Auto-Price-Symbol">$</p>
+                    <input className = "Auto-Price-Input" type="number" placeholder="0" name="auto-price" onChange={handleInputChange}/>
                 </div>
                 <div className = "Loan-Term">
-                    <p>Loan Term</p>
-                    <input type="number" placeholder="0" name="loan-term" onChange={handleInputChange}/>
+                    <p className = "input-header">Loan Term</p>
+                    <p className="Loan-Term-Symbol">months</p>
+                    <input className = "Loan-Term-Input" type="number" placeholder="0" name="loan-term" onChange={handleInputChange}/>
                 </div>
                 <div className = "Interest-Rate">
-                    <p>Interest Rate</p>
-                    <input type="number" step="any" placeholder="0" name="interest-rate" onChange={handleInputChange}/>
+                    <p className = "input-header">Interest Rate</p>
+                    <p className="Interest-Rate-Symbol">%</p>
+                    <input className = "Interest-Rate-Input" type="number" step="any" placeholder="0" name="interest-rate" onChange={handleInputChange}/>
                 </div>
                 <div className = "Down-Payment">
-                    <p>Down Payment</p>
-                    <input type="number" placeholder="0" name="down-payment" onChange={handleInputChange}/>
+                    <p className = "input-header">Down Payment</p>
+                    <p className="Down-Payment-Symbol">$</p>
+                    <input className = "Down-Payment-Input" type="number" placeholder="0" name="down-payment" onChange={handleInputChange}/>
                 </div>
                 <div className = "Trade-In-Value">
-                    <p>Trade-in Value</p>
-                    <input type="number" placeholder="0" name="trade-in-value" onChange={handleInputChange}/>
+                    <p className = "input-header">Trade-in Value</p>
+                    <p className="Trade-In-Value-Symbol">$</p>
+                    <input className = "Trade-In-Value-Input" type="number" placeholder="0" name="trade-in-value" onChange={handleInputChange}/>
                 </div>      
                 <div className = "Sales-Tax">
-                    <p>Sales Tax</p>
-                    <input type="number" step="any" placeholder="0" name="sales-tax" onChange={handleInputChange}/>
+                    <p className = "input-header">Sales Tax</p>
+                    <p className="Sales-Tax-Symbol">%</p>
+                    <input className = "Sales-Tax-Input" type="number" step="any" placeholder="0" name="sales-tax" onChange={handleInputChange}/>
                 </div>
                 <button className = "Calculate" type='submit'>Calculate</button>
             </form>  
