@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {motion} from 'framer-motion';
 import '../styles/AutoLoanCalculatorStyle.css';
 
 function AutoLoanCalculator() {
@@ -88,7 +89,15 @@ function AutoLoanCalculator() {
     function Output() {
         if(hidden===false){
         return(
-            <div className="Output-Container">
+            <motion.div className="Output-Container"
+            initial={{ rotate: 270, scale: 0 }}
+            animate={{ rotate: 360, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20
+            }}
+            >
                 <div className="Output-Monthly">
                     <p className="Monthly">Monthly Pay: ${outputValues["Monthly-Payment"].toLocaleString(undefined, {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
                 </div>    
@@ -110,7 +119,7 @@ function AutoLoanCalculator() {
                 <div className="Output-Other"> 
                     <button className="Clear" onClick={() => setHidden(true)}>Clear</button>
                 </div> 
-            </div>
+            </motion.div>
         );
         }
         else{return(<div></div>);}
